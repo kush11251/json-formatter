@@ -369,4 +369,17 @@ window.addEventListener('DOMContentLoaded', () => {
     toggleSavedBtn.addEventListener('click', toggleSavedItems);
     clearStorageBtn.addEventListener('click', clearStorage);
     themeBtn.addEventListener('click', toggleTheme);
+
+    const mobileWarning = document.getElementById('mobileWarning');
+    const mobileContinueBtn = document.getElementById('mobileContinueBtn');
+    if (window.matchMedia('(max-width: 760px)').matches && mobileWarning) {
+        mobileWarning.style.display = 'flex';
+    }
+    if (mobileContinueBtn) {
+        mobileContinueBtn.addEventListener('click', () => {
+            if (mobileWarning) {
+                mobileWarning.style.display = 'none';
+            }
+        });
+    }
 });
