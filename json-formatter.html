@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-Studio</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header>
+            <h1>JSON-Studio</h1>
+        </header>
+
+        <div class="workspace">
+            <section class="panel input-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Input JSON</h2>
+                        <p>Paste raw JSON to validate, format, minify, or sort.</p>
+                    </div>
+                    <div class="controls">
+                        <button id="formatBtn">Format & Validate</button>
+                        <button id="minifyBtn" class="btn-outline">Minify</button>
+                        <button id="sortBtn" class="btn-outline">Sort JSON</button>
+                        <button id="copyBtn" class="btn-outline">Copy Output</button>
+                        <button id="downloadBtn" class="btn-outline">Download</button>
+                        <button id="clearBtn" class="btn-outline btn-danger">Clear</button>
+                        <button id="saveBtn" class="btn-outline">Save</button>
+                    </div>
+                </div>
+
+                <div class="panel-content">
+                    <textarea id="jsonInput" placeholder="Paste your raw JSON here..."></textarea>
+                </div>
+
+                <div class="panel-footer">
+                    <div class="footer-title">Local Storage</div>
+                    <div class="controls">
+                        <button id="toggleSavedBtn" class="btn-outline">Load Saved</button>
+                        <button id="clearStorageBtn" class="btn-outline btn-danger">Clear All</button>
+                    </div>
+                    <div id="savedItemsContainer" class="saved-items-container"></div>
+                </div>
+            </section>
+
+            <section class="panel output-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Output / Validation</h2>
+                    </div>
+                    <span id="successMsg" class="success-message">Valid JSON ✓</span>
+                </div>
+
+                <div id="errorBox" class="error-message"></div>
+
+                <div class="output-body">
+                    <div class="output-pane">
+                        <div class="panel-subheader">Formatted JSON</div>
+                        <pre id="jsonOutput"></pre>
+                    </div>
+                    <div class="output-pane">
+                        <div class="panel-subheader">JSON Structure</div>
+                        <div id="jsonTree" class="json-tree"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            Made with ❤️ by Kussagra Pathak
+        </footer>
+
+        <button id="themeBtn" class="theme-toggle">🌙</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
